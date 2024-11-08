@@ -1,15 +1,18 @@
-name: 'ACTION-template'
-description: 'Boilerplate for creating a new action'
-
+name: "Check Latest Release Badge"
+description: "Check the latest release and generate a badge for README.md"
 inputs:
-  name:
-    description: 'Your name'
+  repo:
+    description: "Repository to check for latest release"
+    required: true
+    default: "owner/repo" # replace with your repository by default
+  token:
+    description: "GitHub token"
     required: true
 
 outputs:
-  greeting:
-    description: 'A greeting message'
+  badge_url:
+    description: "URL for the Shields.io badge"
 
 runs:
-  using: 'node20'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"

@@ -2,8 +2,41 @@
 
 <!-- action-docs-header source="action.yml" -->
 
+<!-- action-docs-header source="action.yml" -->
+
+<!-- action-docs-inputs source="action.yml" -->
+## Inputs
+
+| name | description | required | default |
+| --- | --- | --- | --- |
+| `repo` | <p>Repository to check for latest release</p> | `true` | `owner/repo` |
+| `token` | <p>GitHub token</p> | `true` | `""` |
 <!-- action-docs-inputs source="action.yml" -->
 
 <!-- action-docs-outputs source="action.yml" -->
+## Outputs
 
-<!-- action-docs-usage source="action.yml" project="<PROJECT>" version="v<VERSION>" -->
+| name | description |
+| --- | --- |
+| `badge_url` | <p>URL for the Shields.io badge</p> |
+<!-- action-docs-outputs source="action.yml" -->
+
+<!-- action-docs-usage source="action.yml" project="gce-digital-marketing-infrastructure/ACTION-latest-release-badge" version="v1.0.0" -->
+## Usage
+
+```yaml
+- uses: gce-digital-marketing-infrastructure/ACTION-latest-release-badge@v1.0.0
+  with:
+    repo:
+    # Repository to check for latest release
+    #
+    # Required: true
+    # Default: owner/repo
+
+    token:
+    # GitHub token
+    #
+    # Required: true
+    # Default: ""
+```
+<!-- action-docs-usage source="action.yml" project="gce-digital-marketing-infrastructure/ACTION-latest-release-badge" version="v1.0.0" -->
