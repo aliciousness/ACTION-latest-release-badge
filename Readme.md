@@ -21,11 +21,11 @@
 | `badge_url` | <p>URL for the Shields.io badge</p> |
 <!-- action-docs-outputs source="action.yml" -->
 
-<!-- action-docs-usage source="action.yml" project="gce-digital-marketing-infrastructure/ACTION-latest-release-badge" version="v1.0.0" -->
+<!-- action-docs-usage source="action.yml" project="aliciousness/ACTION-latest-release-badge" version="v1.0.0" -->
 ## Usage
 
 ```yaml
-- uses: gce-digital-marketing-infrastructure/ACTION-latest-release-badge@v1.0.0
+- uses: aliciousness/ACTION-latest-release-badge@v1.0.0
   with:
     repo:
     # Repository to check for latest release
