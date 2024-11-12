@@ -12,8 +12,12 @@ jobs:
       contents: read
       id-token: write
     steps:
+      - name: Extract version tag
+        id: extract_tag
+        run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        
       - name: Check latest release and get badge URL
-        uses: aliciousness/ACTION-latest-release-badge@main
+        uses: aliciousness/ACTION-latest-release-badge@${{ env.TAG }}
         id: check_release
         with:
           repo: ${{ github.repository }}
@@ -23,10 +27,10 @@ jobs:
         run: echo "${{ steps.check_release.outputs.badge_url }}" > badge_url
 
       - name: Upload badge URL as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: badge_url
           path: badge_url
           
       - name: Read it out to summary
-        run: echo "[${{ steps.check_release.outputs.badge_url }}](https://github.com/aliciousness/ACTION-latest-release-badge/releases)" >> GITHUB_SUMMARY
+        run: echo "[${{ steps.check_release.outputs.badge_url }}](https://github.com/aliciousness/ACTION-latest-release-badge/releases/${{ env.TAG }})" >> $GITHUB_STEP_SUMMARY
