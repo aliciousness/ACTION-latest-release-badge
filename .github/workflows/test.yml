@@ -2,8 +2,12 @@ name: Test Action and publish url to artifact
 
 on:
   workflow_dispatch:
-  release:
-    types: [published]
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
 jobs:
   test:
     name: Test publishing badge
