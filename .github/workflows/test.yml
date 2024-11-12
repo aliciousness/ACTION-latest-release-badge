@@ -27,3 +27,6 @@ jobs:
         with:
           name: badge_url
           path: badge_url
+          
+      - name: Read it out to summary
+        run: echo "[${{ steps.check_release.outputs.badge_url }}](https://github.com/aliciousness/ACTION-latest-release-badge/releases)" >> GITHUB_SUMMARY
