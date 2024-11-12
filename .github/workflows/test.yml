@@ -1,0 +1,29 @@
+name: Update README Labels
+
+on:
+  workflow_dispatch:
+  release:
+    types: [published]
+jobs:
+  test:
+    name: Test publishing badge
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: read
+    steps:
+      - name: Check latest release and get badge URL
+        uses: aliciousness/ACTION-latest-release-badge@main
+        id: check_release
+        with:
+          repo: ${{ github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Save badge URL to file
+        run: echo "${{ steps.check_release.outputs.badge_url }}" > badge_url
+
+      - name: Upload badge URL as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: badge_url
+          path: badge_url
