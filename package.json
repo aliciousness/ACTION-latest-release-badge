@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",
-    "@vercel/ncc": "^0.38.1",
+    "@vercel/ncc": "^0.38.2",
     "action-docs": "^2.4.1",
     "eslint": "^8.51.0",
     "globals": "^15.0.0",
