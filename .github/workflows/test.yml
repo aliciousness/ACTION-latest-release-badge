@@ -9,8 +9,8 @@ jobs:
     name: Test publishing badge
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      id-token: read
+      contents: read
+      id-token: write
     steps:
       - name: Check latest release and get badge URL
         uses: aliciousness/ACTION-latest-release-badge@main
