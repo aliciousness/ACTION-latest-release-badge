@@ -17,7 +17,7 @@ jobs:
         run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
         
       - name: Check latest release and get badge URL
-        uses: aliciousness/ACTION-latest-release-badge@${{ env.TAG }}
+        uses: aliciousness/ACTION-latest-release-badge@main
         id: check_release
         with:
           repo: ${{ github.repository }}
