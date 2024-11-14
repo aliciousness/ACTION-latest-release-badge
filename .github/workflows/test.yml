@@ -8,6 +8,8 @@ on:
   push:
     branches:
       - main
+  release:
+    types: [published]
 jobs:
   test:
     name: Test publishing badge
