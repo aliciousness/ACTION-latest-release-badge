@@ -14,7 +14,7 @@ outputs:
     description: "URL for the Shields.io badge"
 
 runs:
-  using: "node20"
+  using: "node24"
   main: "dist/index.js"
 
 branding:
