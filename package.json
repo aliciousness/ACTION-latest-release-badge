@@ -9,29 +9,30 @@
     "lint": "eslint **.js",
     "update-readme": "node action-docs/update-readme.js && action-docs --update-readme",
     "build": "ncc build index.js -o dist",
-    "prebuild": "npm run lint && npm run update-readme"
+    "prebuild": "pnpm run lint && pnpm run update-readme"
   },
   "author": "Richard Craddock",
   "license": "ISC",
   "dependencies": {
-    "@actions/core": "^1.11.1",
-    "@actions/github": "^6.0.0",
+    "@actions/core": "^3.0.0",
+    "@actions/github": "^9.0.0",
     "axios": "^1.7.7",
-    "typescript": "^5.6.3",
-    "yaml": "^2.6.0"
+    "typescript": "^5.8.3",
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.0.0",
-    "@vercel/ncc": "^0.38.2",
-    "action-docs": "^2.4.1",
-    "eslint": "^8.51.0",
-    "globals": "^15.0.0",
+    "@eslint/js": "^10.0.1",
+    "@vercel/ncc": "^0.38.4",
+    "action-docs": "^2.5.1",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^17.13.1",
+    "eslint-plugin-n": "^17.18.0",
     "eslint-plugin-promise": "^6.1.1"
   },
+  "packageManager": "pnpm@10.33.0",
   "volta": {
-    "node": "20.12.1"
+    "node": "24"
   }
 }
